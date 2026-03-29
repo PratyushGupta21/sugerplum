@@ -1,0 +1,121 @@
+/* Sugar Plum Bakery - Global Styles */
+
+/* Color Palette */
+:root {
+    --rose-pink: #FFB6C1;
+    --cream: #FFFDD0;
+    --plum: #8B4513;
+    --gold: #FFD700;
+    --dark-plum: #654321;
+    --light-gray: #F5F5F5;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-plum);
+    background-color: var(--cream);
+}
+
+h1, h2, h3 {
+    color: var(--plum);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--plum);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button, .offer-button {
+    background-color: var(--rose-pink);
+    color: var(--white);
+}
+
+.cta-button:hover, .offer-button:hover {
+    background-color: #FF69B4;
+}
+
+/* Navigation */
+#nav {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo {
+    color: var(--plum);
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--dark-plum);
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--rose-pink);
+}
+
+/* Main Content */
+#main-content {
+    min-height: calc(100vh - 80px);
+}
+
+/* Page Styles */
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .page {
+        padding: 1rem 0.5rem;
+    }
+}

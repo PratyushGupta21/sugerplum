@@ -1,0 +1,72 @@
+<div id="menu-page" class="page">
+    <h1>Our Menu</h1>
+    <div class="menu-grid" id="menu-grid">
+        <!-- Menu items will be loaded here -->
+    </div>
+</div>
+
+<script>
+// Sample menu data - in a real app, this would come from the backend
+const menuItems = [
+    {
+        id: 1,
+        name: "Chocolate Croissant",
+        price: 4.50,
+        description: "Buttery croissant filled with rich chocolate",
+        image: "assets/images/chocolate-croissant.jpg"
+    },
+    {
+        id: 2,
+        name: "Blueberry Muffins",
+        price: 3.25,
+        description: "Fresh blueberries in a moist muffin",
+        image: "assets/images/blueberry-muffin.jpg"
+    },
+    {
+        id: 3,
+        name: "Vanilla Cupcake",
+        price: 2.75,
+        description: "Classic vanilla cupcake with buttercream frosting",
+        image: "assets/images/vanilla-cupcake.jpg"
+    },
+    {
+        id: 4,
+        name: "Sourdough Bread",
+        price: 6.00,
+        description: "Artisanal sourdough bread, perfect for sandwiches",
+        image: "assets/images/sourdough-bread.jpg"
+    },
+    {
+        id: 5,
+        name: "Apple Pie",
+        price: 15.00,
+        description: "Traditional apple pie with lattice crust",
+        image: "assets/images/apple-pie.jpg"
+    },
+    {
+        id: 6,
+        name: "Cinnamon Rolls",
+        price: 4.00,
+        description: "Soft, gooey cinnamon rolls with cream cheese frosting",
+        image: "assets/images/cinnamon-roll.jpg"
+    }
+];
+
+function loadMenu() {
+    const menuGrid = document.getElementById('menu-grid');
+    menuItems.forEach(item => {
+        const itemCard = document.createElement('div');
+        itemCard.className = 'menu-item';
+        itemCard.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" onerror="this.src='assets/images/placeholder.jpg'">
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <span class="price">$${item.price.toFixed(2)}</span>
+            <button onclick="addToCart(${item.id})" class="add-to-cart-btn">Add to Cart</button>
+        `;
+        menuGrid.appendChild(itemCard);
+    });
+}
+
+loadMenu();
+</script>
